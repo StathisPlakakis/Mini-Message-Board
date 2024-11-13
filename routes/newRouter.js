@@ -1,6 +1,6 @@
 const {Router} = require('express');
-const {newController} = require('../controllers/newController');
+const {getNewController} = require('../controllers/getNewController');
 const newRouter = Router();
-newRouter.get('/', newController);
+newRouter.get('/', getNewController);
 
 module.exports = {newRouter};
