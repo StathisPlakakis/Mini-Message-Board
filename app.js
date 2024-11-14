@@ -17,7 +17,11 @@ app.use((req, res, next) => {
 })
 app.use((err, req, res, next) => {
   console.error(err);
-  res.send(err.message);
+  if (err.statusCode === 404) {
+    res.render('error');
+  }else {
+    res.send(err.message);
+  }
 })
 app.listen(PORT, () => {
   console.log(`The app listens at Port: ${PORT}`);
