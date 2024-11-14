@@ -1,3 +1,61 @@
-h1 {
-  color: red;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.messages-container {
+  height: 80vh;
+  width: 50vw;
+  overflow: scroll;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.message-container {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  border: 1px solid white;
+  width: 50%;
+  padding: 10px;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  word-break: break-word;  
+}
+
+.messages-container > :first-child {
+  margin-top: 10px;
+}
+
+.messages-container > :last-child {
+  margin-bottom: 10px;
+}
+
+.message-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a {
+  padding: 5px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  background-color: black;
 }

@@ -1,6 +1,13 @@
-<form method="POST" action="/new">
-  <h2>Post a new message</h2>
-  <input type="text" name="authorName" id="authorName" placeholder="Your name">
-  <textarea name="newMessage" id="newMessage" placeholder="Your message"></textarea>
-  <input type="submit">
-</form>
+<html>
+  <head>
+    <title><%= title%></title>
+  </head>
+  <body>
+    <form method="POST" action="/new">
+      <h2>Post a new message</h2>
+      <input type="text" name="authorName" id="authorName" placeholder="Your name">
+      <textarea name="newMessage" id="newMessage" placeholder="Your message"></textarea>
+      <input type="submit">
+    </form>
+  </body>
+</html>

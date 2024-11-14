@@ -5,12 +5,16 @@
   </head>
   <body>
     <a href="/new">Post message</a>
-    <% messages.forEach((message) => { %>
-      <div>
-        <h1><%= message.user %></h1>
-        <p><%= message.text %></p>
-        <p><%= message.added %></p>
-      </div>
-    <% }); %>
+    <div class="messages-container">
+      <% messages.forEach((message) => { %>
+        <div class="message-container">
+          <div class="message-info">
+            <h1><%= message.user %></h1>
+            <p><%= `Sent on ${message.added}` %></p>
+          </div>
+          <p><%= message.text %></p>
+        </div>
+      <% }); %>
+    </div>
   </body>
 </html>
