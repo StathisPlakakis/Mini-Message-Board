@@ -30,7 +30,7 @@ const sharedData = {
 }
 
 const getIndexController = asyncHandler(async (req, res) => {
-  res.render('index', { title: "Mini Messageboard", messages: sharedData.messages });
+  await res.render('index', { title: "Mini Messageboard", messages: sharedData.messages });
 });
 
 module.exports = {getIndexController, sharedData};

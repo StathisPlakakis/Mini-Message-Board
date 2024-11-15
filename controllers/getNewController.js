@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const getNewController = asyncHandler(async (req, res) => {
-  res.render('form',  {
+  await res.render('form',  {
     title: "Mini Messageboard",
   });
 });
