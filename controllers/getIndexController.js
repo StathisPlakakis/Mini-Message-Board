@@ -1,4 +1,5 @@
 const asyncHandler = require("express-async-handler");
+const db = require('../db/queries')
 
 const sharedData = {
   messages: [
@@ -30,7 +31,8 @@ const sharedData = {
 }
 
 const getIndexController = asyncHandler(async (req, res) => {
-  await res.render('index', { title: "Mini Messageboard", messages: sharedData.messages });
+  const messages = await db.getIndex();
+  res.render('index', { title: "Mini Messageboard", messages: sharedData.messages });
 });
 
-module.exports = {getIndexController, sharedData};
+module.exports = {getIndexController};
