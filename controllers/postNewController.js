@@ -1,18 +1,15 @@
 const asyncHandler = require("express-async-handler");
-const {sharedData} = require("../controllers/getIndexController");
+const db = require('../db/queries');
+
 const postNewController = asyncHandler(async (req, res) => {
-  sharedData.messages = [
-    { 
-        text: req.body.newMessage, user: req.body.authorName, added: new Date().toLocaleString('en-GB', {
-          day: '2-digit',
-          month: '2-digit',
-          year: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        }).replace(',', '')
-       }, ...sharedData.messages
-  ]
+  await db.postNew(req.body.authorName, req.body.newMessage, new Date().toLocaleString('en-GB', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).replace(',', ''))
   res.redirect("/");
 });
 
