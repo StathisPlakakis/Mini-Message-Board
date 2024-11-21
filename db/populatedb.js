@@ -14,12 +14,12 @@ hour12: false
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
 id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-user VARCHAR (30),
+username VARCHAR (30),
 message VARCHAR (120),
 date VARCHAR
 );
 
-INSERT INTO messages (user, message, date) 
+INSERT INTO messages (username, message, date) 
 VALUES ('Amando', 'Hi there!', '${date}'), 
       ('Charles', 'Hello World!', '${date}');
 `;

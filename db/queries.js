@@ -7,8 +7,8 @@ const getIndex = async () => {
 
 const postNew = async (user, message, date) => {
   await pool.query(`
-    INSERT INTO messages (user, message, date) 
-      VALUES ('${user}', '${message}', '${message}');
+    INSERT INTO messages (username, message, date) 
+      VALUES ('${user}', '${message}', '${date}');
       `)
 }
 
