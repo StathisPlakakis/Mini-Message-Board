@@ -27,7 +27,7 @@ VALUES ('Amando', 'Hi there!', '${date}'),
 
 async function main() {
   const client = new Client({
-    connectionString: process.env.CONNECTION_STRING
+  connectionString: `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}:${process.env.PGPORT}/${process.env.PGDATABASE}`
     });
     
   await client.connect();
