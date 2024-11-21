@@ -27,7 +27,7 @@ VALUES ('Amando', 'Hi there!', '${date}'),
 
 async function main() {
   const client = new Client({
-    connectionString: `${{ DATABASE_URL }}`
+    connectionString: `${{ Clickhouse.DATABASE_URL }}`
     });
     
   await client.connect();
