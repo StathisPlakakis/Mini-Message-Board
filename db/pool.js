@@ -2,6 +2,6 @@ const {Pool} = require('pg');
 require('dotenv').config();
 
 module.exports = new Pool({
-  connectionString: `${{ Clickhouse.DATABASE_URL }}
+  connectionString: `${{ DATABASE_URL }}
 `
 })
