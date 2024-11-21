@@ -2,6 +2,5 @@ const {Pool} = require('pg');
 require('dotenv').config();
 
 module.exports = new Pool({
-  connectionString: `${{ DATABASE_URL }}
-`
+  connectionString: process.env.DATABASE_URL
 })
